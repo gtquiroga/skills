@@ -31,3 +31,34 @@ _Avoid_: manual skill
 **Model-invoked skill**:
 A skill the agent may trigger on its own when a task matches its `description`. The default when `disable-model-invocation` is absent.
 _Avoid_: auto skill, automatic skill
+
+**Catalog layout**:
+The repo's folder convention: `skills/<category>/<name>/SKILL.md`. The `skills` CLI walks one extra level deep for exactly this shape, so the category folder groups skills in the install picker for free — no config file or frontmatter needed.
+_Avoid_: flat layout (the older `skills/<name>/` shape, no longer used)
+
+**Category**:
+The lifecycle bucket a skill lives in, expressed as its parent folder under `skills/`. Exactly four: `in-progress`, `coding`, `personal`, `deprecated`. A skill's identity is its `<name>`, independent of category — moving it between categories does not change its `/name` or break `npx skills update`.
+_Avoid_: group, folder, tag
+
+**In-progress**:
+Category for drafts not yet promoted. Installable (left visible in the picker) so you can dogfood them, but unstable.
+
+**Coding**:
+Category for skills that operate on a codebase or an engineering workflow (e.g. `to-prd-codex`, TDD, code review).
+_Avoid_: engineer, engineering
+
+**Personal**:
+Category for skills supporting non-coding workflows (writing, planning, learning, life admin).
+
+**Deprecated**:
+Category for retired skills. Kept in the repo for reference but marked `metadata.internal: true` so they are hidden from the install picker.
+
+**Promote**:
+Move a skill from `in-progress` into `coding` or `personal` (a `git mv`). No frontmatter change.
+
+**Deprecate**:
+Retire a skill: `git mv` it into `deprecated` and add `metadata.internal: true`.
+
+**Internal**:
+The `metadata.internal: true` frontmatter flag that hides a skill from the `npx skills add` picker. Used only on `deprecated` skills; it can still be installed explicitly with `--skill <name>`.
+_Avoid_: hidden, private

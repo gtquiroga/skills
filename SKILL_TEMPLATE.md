@@ -3,8 +3,8 @@
 Copy this file to start a new skill:
 
 ```bash
-mkdir -p skills/<your-skill-name>
-cp SKILL_TEMPLATE.md skills/<your-skill-name>/SKILL.md
+mkdir -p skills/in-progress/<your-skill-name>
+cp SKILL_TEMPLATE.md skills/in-progress/<your-skill-name>/SKILL.md
 # then edit the frontmatter + body below
 ```
 
@@ -47,6 +47,6 @@ imperative — you are writing a prompt for the agent, not documentation for a h
 
 ## Conventions
 
-- One folder per skill under `skills/`, folder name == `name`.
+- One folder per skill under a category — `skills/<category>/<name>/` — folder name == `name`. New skills start in `skills/in-progress/`; promote to `coding`/`personal` when solid. See [README](./README.md#categories--lifecycle).
 - Keep `SKILL.md` instructions tight; push long reference material into sibling files.
 - See [CONTEXT.md](./CONTEXT.md) for the vocabulary (Skill, Source, Scope, user- vs model-invoked).

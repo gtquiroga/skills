@@ -7,5 +7,5 @@ The CLI already handles multi-agent targeting, global/project scope, symlink-vs-
 ## Consequences
 
 - The repo must be reachable by the CLI. We host it **public** on GitHub so `npx skills add gtquiroga/skills` works with zero auth.
-- We follow the CLI's discovery convention: every skill is a folder under `skills/` containing a `SKILL.md`.
+- We follow the CLI's discovery convention: every skill is a folder containing a `SKILL.md`. The exact placement under `skills/` is the catalog layout defined in [ADR 0002](./0002-catalog-layout-with-lifecycle-categories.md), which supersedes the flat `skills/<name>/` shape originally implied here.
 - We write no `package.json`, `bin`, or publish step.
