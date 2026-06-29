@@ -1,6 +1,6 @@
 ---
 name: to-prd-codex
-description: Two-act PRD hardening. ACT 1 (you ↔ Claude) — Claude synthesizes the current conversation context and codebase understanding into a PRD draft written to PRD.md (no interview, no publishing yet). ACT 2 (Claude ↔ Codex) — OpenAI Codex adversarially reviews PRD.md in a read-only sandbox (VERDICT: APPROVED/REVISE), Claude revises and re-submits to the SAME Codex session until APPROVED or a MAX_ROUNDS cap. Only after explicit user sign-off is the PRD published to the project issue tracker. Use when you want a second model to attack a PRD before it becomes issues.
+description: "Two-act PRD hardening. ACT 1 (you ↔ Claude) — Claude synthesizes the current conversation context and codebase understanding into a PRD draft written to PRD.md (no interview, no publishing yet). ACT 2 (Claude ↔ Codex) — OpenAI Codex adversarially reviews PRD.md in a read-only sandbox (VERDICT: APPROVED/REVISE), Claude revises and re-submits to the SAME Codex session until APPROVED or a MAX_ROUNDS cap. Only after explicit user sign-off is the PRD published to the project issue tracker. Use when you want a second model to attack a PRD before it becomes issues."
 ---
 
 This skill produces a PRD exactly like `/to-prd`, then runs an adversarial Codex review on it BEFORE publishing to the issue tracker. Do NOT interview the user — synthesize what you already know. Catch conceptual and scope flaws here, where they are cheapest, before the PRD fans out into issues.
